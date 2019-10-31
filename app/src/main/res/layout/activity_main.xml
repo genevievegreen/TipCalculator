@@ -4,130 +4,144 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundmain"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/buttonMinus"
         android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginRight="22dp"
-        android:layout_marginBottom="28dp"
-        android:text="@string/button_minus"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTipDisplay"
-        app:layout_constraintEnd_toEndOf="@+id/etBillAmount"
-        app:layout_constraintStart_toEndOf="@+id/buttonPlus"
-        app:layout_constraintTop_toBottomOf="@+id/tvBillAmount" />
-
-    <TextView
-        android:id="@+id/tvBillAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginBottom="9dp"
-        android:text="@string/bill_amount"
-        app:layout_constraintBottom_toBottomOf="@+id/etBillAmount"
-        app:layout_constraintEnd_toStartOf="@+id/etBillAmount"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvPercent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="42dp"
-        android:text="@string/percent"
+        android:layout_height="30dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:layout_marginTop="142dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginRight="102dp"
+        android:layout_marginBottom="63dp"
+        android:background="@drawable/minus"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/buttonCalculate"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPlus"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBillAmount" />
-
-    <TextView
-        android:id="@+id/tvTip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:text="@string/tip"
-        app:layout_constraintStart_toStartOf="@+id/tvPercent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPercent" />
-
-    <TextView
-        android:id="@+id/tvTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
-        android:layout_marginLeft="47dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/total"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTip" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etBillAmount"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/billamountblock"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/hint"
         android:inputType="numberDecimal"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/tvPercentDisplay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvBillAmount"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvPercentDisplay"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
+        android:layout_marginBottom="43dp"
+        android:gravity="center_horizontal"
         android:text="@string/percent_display"
-        app:layout_constraintStart_toStartOf="@+id/etBillAmount"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCalculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etBillAmount" />
 
     <Button
         android:id="@+id/buttonPlus"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:text="@string/button_plus"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonMinus"
-        app:layout_constraintEnd_toEndOf="@+id/etBillAmount"
-        app:layout_constraintStart_toStartOf="@+id/etBillAmount" />
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginRight="131dp"
+        android:background="@drawable/plus"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/tvPercentDisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonMinus"
+        app:layout_constraintTop_toTopOf="@+id/tvPercentDisplay" />
 
     <TextView
         android:id="@+id/tvTipDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
         android:text="@string/tip_display"
-        app:layout_constraintStart_toStartOf="@+id/tvPercentDisplay"
-        app:layout_constraintTop_toBottomOf="@+id/tvPercentDisplay" />
+        android:textSize="@android:dimen/app_icon_size"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tvTotal"
+        app:layout_constraintStart_toStartOf="@+id/tvTotalDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipAmount" />
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/total"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tvTotalDisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipDisplay" />
 
     <TextView
         android:id="@+id/tvTotalDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="217dp"
+        android:gravity="center"
         android:text="@string/total_display"
-        app:layout_constraintStart_toStartOf="@+id/tvPercentDisplay"
-        app:layout_constraintTop_toBottomOf="@+id/tvTipDisplay" />
+        android:textSize="@android:dimen/app_icon_size"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotal" />
+
+    <TextView
+        android:id="@+id/tvTipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/tip"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tvTipDisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalculate" />
 
     <Button
         android:id="@+id/buttonCalculate"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:text="@string/calculate"
+        android:layout_height="0dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:layout_marginBottom="458dp"
+        android:background="@drawable/calcbutton"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTotal" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonMinus" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
