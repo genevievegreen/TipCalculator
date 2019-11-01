@@ -22,6 +22,7 @@ import org.w3c.dom.Text;
 import static com.green.tipcalculator.R.id.buttonCalculate;
 import static com.green.tipcalculator.R.id.buttonMinus;
 import static com.green.tipcalculator.R.id.buttonPlus;
+import static com.green.tipcalculator.R.id.buttonReset;
 import static com.green.tipcalculator.R.id.cbSplit;
 import static com.green.tipcalculator.R.id.etBillAmount;
 import static com.green.tipcalculator.R.id.etSplitNum;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox chSplit;
     private EditText editSplitNum;
     private TextView textSplit;
+    private Button btReset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +96,33 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Button Actions
+        btReset = (Button) findViewById(buttonReset);
+        btReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (txtTipLabel.getVisibility()==View.VISIBLE) {
+                    txtTipLabel.setAnimation(aniFadeOut);
+                    txtTotalLabel.setAnimation(aniFadeOut);
+                    textTip.setAnimation(aniFadeOut);
+                    textTotal.setAnimation(aniFadeOut);
+
+                    if (textSplit.getVisibility() == View.VISIBLE) {
+                        textSplit.setAnimation(aniFadeOut);
+                        textSplit.setVisibility(View.INVISIBLE);
+                    }
+
+                    txtTipLabel.setVisibility(View.INVISIBLE);
+                    txtTotalLabel.setVisibility(View.INVISIBLE);
+                    textTip.setVisibility(View.INVISIBLE);
+                    textTotal.setVisibility(View.INVISIBLE);
+
+                    editBillAmount.setText("");
+                    editSplitNum.setText("");
+                    
+                }
+            }
+        });
+
         btPlus = (Button) findViewById(buttonPlus);
         btPlus.setOnClickListener(new View.OnClickListener() {
             @Override
