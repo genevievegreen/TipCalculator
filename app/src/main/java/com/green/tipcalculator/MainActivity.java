@@ -2,13 +2,11 @@ package com.green.tipcalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -16,9 +14,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.chip.Chip;
-
-import org.w3c.dom.Text;
 
 import static com.green.tipcalculator.R.id.buttonCalculate;
 import static com.green.tipcalculator.R.id.buttonMinus;
