@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -118,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
                     editBillAmount.setText("");
                     editSplitNum.setText("");
-                    
+
                 }
             }
         });
@@ -171,12 +172,20 @@ public class MainActivity extends AppCompatActivity {
                     textSplit.setVisibility(View.INVISIBLE);
 
                     if (chSplit.isChecked()) {
-                        splitNum = Integer.parseInt(editSplitNum.getText().toString());
-                        splitAmount = total / (double) splitNum;
+                        if (editSplitNum.getText().toString()=="" || TextUtils.isEmpty(editSplitNum.getText())) {
+                            splitNum = 1;
 
-                        textSplit.setText("Each divided total is: $" + String.format("%.2f", splitAmount));
-                        textSplit.startAnimation(aniFade);
-                        textSplit.setVisibility(View.VISIBLE);
+                            splitAmount = total / (double) splitNum;
+                        }
+                        else {
+                            splitNum = Integer.parseInt(editSplitNum.getText().toString());
+
+                            splitAmount = total / (double) splitNum;
+
+                            textSplit.setText("Each divided total is: $" + String.format("%.2f", splitAmount));
+                            textSplit.startAnimation(aniFade);
+                            textSplit.setVisibility(View.VISIBLE);
+                        }
                     }
                 }
 

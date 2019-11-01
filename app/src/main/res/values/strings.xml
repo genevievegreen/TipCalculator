@@ -13,4 +13,5 @@
     <string name="hint">Enter Bill Amount</string>
     <string name="split">Splitting the bill?</string>
     <string name="reset">reset</string>
+    <string name="hint2">#</string>
 </resources>
